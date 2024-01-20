@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            top:0;
+            margin-top: -3%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #navlink {
+
+            width: 100%;
+            height: 100px;
+            background-color: #000;
+            color: white;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        #navlink h2, #navlink h3 {
+            margin: 0;
+            color: white;
+        }
+
+        #navlink img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li {
+            margin-right: 20px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .booking-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:green;
+        }
+
+        #logout-btn {
+            background-color: green;
+        }
+
+        #logout-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+    <script>
+        function logout() {
+            // Add your logout logic here
+            alert('Logged out successfully!');
+            // Redirect to the login page or perform other actions as needed
+        }
+    </script>
+</head>
+<body>
+    <div id="navlink">
+        <h2>WELCOME TO BOOKING DASHBORD</h2>
+        <ul>
+            <li><a href="booking.php">BOOKING</a></li>
+            <li><a href="payment.php">PAYMENT</a></li>
+            <li><a href="rateus.php">RATE US</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+        <button id="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="booking-container">
+        <h2>Booking Details</h2>
+        <form>
+            <label for="arrivalDate">Arrival Date:</label>
+            <input type="date" id="arrivalDate" name="arrivalDate" required>
+
+            <label for="numBookers">Number of Bookers:</label>
+            <input type="number" id="numBookers" name="numBookers" min="1" required>
+            <label for="numChildren">Number of Children:</label>
+            <input type="number" id="numChildren" name="numChildren" min="0" required>
+
+            <label for="numMen">Number of Men:</label>
+            <input type="number" id="numMen" name="numMen" min="0" required>
+
+            <label for="numWomen">Number of Women:</label>
+            <input type="number" id="numWomen" name="numWomen" min="0" required>
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType">
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+                <option value="suite">Suite</option>
+            </select>
+            <label for="additionalInfo">Additional Information:</label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="4"></textarea><br>
+
+            <!-- Add more input fields as needed -->
+
+            <button type="submit">Book Now</button>
+        </form>
