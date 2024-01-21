@@ -69,17 +69,27 @@ CREATE TABLE `comments_tb` (
   `subject` varchar(255) NOT NULL,
   `comment` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
+<<<<<<< HEAD
   `Location` varchar(255) DEFAULT NULL,
   `userID` int(11) DEFAULT NULL
+=======
+  `Location` varchar(255) DEFAULT NULL
+>>>>>>> f944e41ac9bb1e5c32b5064894006148914b16b3
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `comments_tb`
 --
 
+<<<<<<< HEAD
 INSERT INTO `comments_tb` (`id`, `username`, `subject`, `comment`, `date`, `Location`, `userID`) VALUES
 (7, 'straton@gmail.com', 'Feedback', 'to be honest i like your services and i think you derserve a lot of appreciation', '2024-01-12 06:52:02', NULL, NULL),
 (8, 'Zabron@gmail.com', 'Feedback', 'you have a bad services you deserve to be fired', '2024-01-12 06:55:45', NULL, NULL);
+=======
+INSERT INTO `comments_tb` (`id`, `username`, `subject`, `comment`, `date`, `Location`) VALUES
+(7, 'straton@gmail.com', 'Feedback', 'to be honest i like your services and i think you derserve a lot of appreciation', '2024-01-12 06:52:02', NULL),
+(8, 'Zabron@gmail.com', 'Feedback', 'you have a bad services you deserve to be fired', '2024-01-12 06:55:45', NULL);
+>>>>>>> f944e41ac9bb1e5c32b5064894006148914b16b3
 
 -- --------------------------------------------------------
 
@@ -235,8 +245,12 @@ ALTER TABLE `booking`
 -- Indexes for table `comments_tb`
 --
 ALTER TABLE `comments_tb`
+<<<<<<< HEAD
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_comments_user` (`userID`);
+=======
+  ADD PRIMARY KEY (`id`);
+>>>>>>> f944e41ac9bb1e5c32b5064894006148914b16b3
 
 --
 -- Indexes for table `house`
@@ -291,12 +305,15 @@ ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`userID`) REFERENCES `house` (`userID`);
 
 --
+<<<<<<< HEAD
 -- Constraints for table `comments_tb`
 --
 ALTER TABLE `comments_tb`
   ADD CONSTRAINT `fk_comments_user` FOREIGN KEY (`userID`) REFERENCES `house` (`userID`);
 
 --
+=======
+>>>>>>> f944e41ac9bb1e5c32b5064894006148914b16b3
 -- Constraints for table `payment`
 --
 ALTER TABLE `payment`
